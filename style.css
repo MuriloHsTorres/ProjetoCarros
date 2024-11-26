@@ -1,0 +1,91 @@
+:root {
+    /*Definir cores variaveis*/
+    --cor-primaria: #414141;
+    --cor-secundaria: #a7a7a7;
+    --cor-terciaria: #ebebeb;
+    --cor-quartenaria: #c9c9c9;
+    --cor-quintenaria: #858585;
+}
+
+* {
+    /*Ajustando as proporções para 0*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Fazendo que os estilos da header, main e footer sejam caixas*/
+}
+
+body {
+    background-color: white; /*A cor de fundo de tudo que não esteja especificado será branca*/
+}
+
+header { /*Cabeçalho*/
+    background-color: var(--cor-secundaria); /*Cor de fundo */
+    display: flex; /*Os itens no header vão ter propriedades flex box, por padrão quando a tela diminuir ou aumentar os itens vão pular de linha ou não*/
+    align-items: center; /*os itens vão ficar no centro*/
+    justify-content: space-between; /*Vai criar um espaço entre a logo e a Nav*/
+    padding: 10px 20px; /*O espaçamento dos itens e os cantos da tela*/
+    position: fixed; /*O header vai acompanhar a tela mesmo se o user abaixar a tela*/
+    top: 0; /*Vai fixar o header no topo*/
+    left: 0; /*Vai fixar na esquerda*/
+    width: 100%; /*Vai ocupar todo o espaço disponível*/
+    z-index: 1000; /*Definir a posição do header na tela, fazendo que ele sempre esconda os conteudos abaixo quando dar scroll down*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /*Sombra do header no main*/
+    height: 100px; /*Tamanho do header na tela*/
+}
+
+.menu ul {
+    list-style-type: none; /*A lista não vai ter as ° ou - */
+    display: flex; /*Propriedades flex*/
+    gap: 20px; /*Os itens da lista vão ter um espaçamento de 20 pixeis entre si*/
+    font-family: Arial, Helvetica, sans-serif; /*Fonte dos Textos*/
+}
+
+.menu ul li a {
+    display: inline-block; /*Os itens vão ser exibidos em linhas como bloquinhos*/
+    text-decoration: none;
+    color: black; /*cor do texto do botão*/
+    /*font-size: ;*/
+    padding: 3px 5px;
+    border: 2px solid transparent; /*Definir uma borda tranparente*/
+    border-radius: 5px; /*A curvatura da borda*/
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /*Vai criar uma leve animação de aparecimento desses atributos*/
+}
+
+.menu ul li a:hover { /*Vai mudar os butões após passar o mouse por cima*/
+    background-color: black;
+    color: white;
+    border-color: transparent; /*Cor tranparente da borda*/
+}
+
+.menu ul li.dropdown {
+    position: relative; /*O submenu será relativo a posição do header, ou seja, ele pode acompanhar onde o header estiver sem uma posição fixa*/
+}
+
+.menu ul li .submenu {
+    display: none; /*Esconde sub itens até que passe o mouse por cima*/
+    position: absolute; /*Vai se manter sempre debaixo do botão*/
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-secundaria);
+    padding: 5px ;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 10px; /*Define um tamnho minimo*/
+}
+
+.menu ul li:hover .submenu {
+    display: block;
+}
+
+.menu ul li .submenu li a {
+    /*margin-left: 15px;*/
+    padding: 6px 5px;
+}
+
+main {
+    margin-top: 110px; /*Isto vai garantir que o main esteja 10 pixeis abaixo do header na posição inicial*/
+}
+
+footer {
+    background-color: var(--cor-primaria);
+}
