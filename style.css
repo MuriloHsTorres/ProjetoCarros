@@ -7,11 +7,15 @@
     --cor-quintenaria: #858585;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap');
+
+
 * {
     /*Ajustando as proporções para 0*/
     margin: 0;
     padding: 0;
     box-sizing: border-box; /*Fazendo que os estilos da header, main e footer sejam caixas*/
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 body {
@@ -33,6 +37,38 @@ header { /*Cabeçalho*/
     height: 100px; /*Tamanho do header na tela*/
 }
 
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo-pesquisa {
+    padding: 10px;
+    font-size: 16px;
+    border: transparent;
+    border-radius: 20px;
+    width: 400px;
+    outline: none;
+}
+
+.campo-pesquisa:focus {
+    border: none;
+}
+
+.btn-pesquisa {
+    padding: 10px;
+    margin-left: -30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+}
+
+.btn-pesquisa:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
 .menu ul {
     list-style-type: none; /*A lista não vai ter as ° ou - */
     display: flex; /*Propriedades flex*/
@@ -49,6 +85,7 @@ header { /*Cabeçalho*/
     border: 2px solid transparent; /*Definir uma borda tranparente*/
     border-radius: 5px; /*A curvatura da borda*/
     transition: background-color 0.3s, color 0.3s, border 0.3s; /*Vai criar uma leve animação de aparecimento desses atributos*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .menu ul li a:hover { /*Vai mudar os butões após passar o mouse por cima*/
@@ -64,7 +101,7 @@ header { /*Cabeçalho*/
 .menu ul li .submenu {
     display: none; /*Esconde sub itens até que passe o mouse por cima*/
     position: absolute; /*Vai se manter sempre debaixo do botão*/
-    top: 100%;
+    top: 110%;
     left: 0;
     background-color: var(--cor-secundaria);
     padding: 5px ;
@@ -79,7 +116,10 @@ header { /*Cabeçalho*/
 
 .menu ul li .submenu li a {
     /*margin-left: 15px;*/
+    margin-top: 5px;
+    width: 100%;
     padding: 6px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 main {
