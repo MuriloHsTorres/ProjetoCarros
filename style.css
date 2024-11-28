@@ -22,6 +22,16 @@ body {
     background-color: white; /*A cor de fundo de tudo que não esteja especificado será branca*/
 }
 
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 3px 0px 0px var(--cor-terciaria), 
+    2px 2px 4px rgba(0, 0, 0, 0.3), 
+    3px 3px 6px rgba(0, 0, 0, 0.2), 
+    4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 header { /*Cabeçalho*/
     background-color: var(--cor-secundaria); /*Cor de fundo */
     display: flex; /*Os itens no header vão ter propriedades flex box, por padrão quando a tela diminuir ou aumentar os itens vão pular de linha ou não*/
@@ -43,7 +53,7 @@ header { /*Cabeçalho*/
     justify-content: center;
 }
 
-.campo-pesquisa {
+.campo-pesquisa { /*Os .campo são a estilização da barra de pesquisa*/
     padding: 10px;
     font-size: 16px;
     border: transparent;
@@ -124,11 +134,25 @@ header { /*Cabeçalho*/
 
 main {
     margin-top: 110px; /*Isto vai garantir que o main esteja 10 pixeis abaixo do header na posição inicial*/
-    height: 745px;
+    height: 850px;
 }
 
 footer {
     background-color: var(--cor-primaria);
     color: white;
-    display: flex;
+}
+
+footer div {
+    text-align: center;
+    padding: 10px;
+}
+
+footer div i {
+    color: white;
+    padding: 10px;
+    font-size: 50px;
+}
+
+footer div p {
+    padding: 3px;
 }
