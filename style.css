@@ -124,8 +124,11 @@ header { /*Cabeçalho*/
 
 main {
     margin-top: 110px; /*Isto vai garantir que o main esteja 10 pixeis abaixo do header na posição inicial*/
+    height: 745px;
 }
 
 footer {
     background-color: var(--cor-primaria);
+    color: white;
+    display: flex;
 }
