@@ -1,0 +1,243 @@
+:root {
+    /*Definir cores variaveis*/
+    --cor-primaria: #0077FF;
+    --cor-secundaria: #005CC5;
+    --cor-terciaria: #002C5F;
+    --cor-quartenaria: #F09900;
+    --cor-quintenaria: #F02D01;
+    --cor-sextenaria: #D9D9D9;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,300;1,300&display=swap&https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+* {
+    /*Ajustando as proporções para 0*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Fazendo que os estilos da header, main e footer sejam caixas*/
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+    background-color: black; /*A cor de fundo de tudo que não esteja especificado será branca*/
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    text-shadow: 3px 0px 0px var(--cor-terciaria), 
+    2px 2px 4px rgba(0, 0, 0, 0.5), 
+    3px 3px 6px rgba(0, 0, 0, 0.3), 
+    4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header { /*Cabeçalho*/
+    background-color: black; /*Cor de fundo */
+    display: flex; /*Os itens no header vão ter propriedades flex box, por padrão quando a tela diminuir ou aumentar os itens vão pular de linha ou não*/
+    align-items: center; /*os itens vão ficar no centro*/
+    justify-content: space-between; /*Vai criar um espaço entre a logo e a Nav*/
+    padding: 10px 20px; /*O espaçamento dos itens e os cantos da tela*/
+    position: fixed; /*O header vai acompanhar a tela mesmo se o user abaixar a tela*/
+    top: 0; /*Vai fixar o header no topo*/
+    left: 0; /*Vai fixar na esquerda*/
+    width: 100%; /*Vai ocupar todo o espaço disponível*/
+    z-index: 1000; /*Definir a posição do header na tela, fazendo que ele sempre esconda os conteudos abaixo quando dar scroll down*/
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3); /*Sombra do header no main*/
+    height: 100px; /*Tamanho do header na tela*/
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo-pesquisa { /*Os .campo são a estilização da barra de pesquisa*/
+    padding: 10px;
+    font-size: 16px;
+    border: transparent;
+    border-radius: 20px;
+    width: 400px;
+    outline: none;
+    background-color: var(--cor-sextenaria);
+    color: black;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+}
+
+.campo-pesquisa:focus {
+    border: none;
+}
+
+.btn-pesquisa {
+    padding: 10px;
+    margin-left: -35px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.btn-pesquisa:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.menu ul {
+    list-style-type: none; /*A lista não vai ter as ° ou - */
+    display: flex; /*Propriedades flex*/
+    gap: 20px; /*Os itens da lista vão ter um espaçamento de 20 pixeis entre si*/
+    font-family: "Roboto Mono", monospace; /*Fonte dos Textos*/
+}
+
+.menu ul li a {
+    display: inline-block; /*Os itens vão ser exibidos em linhas como bloquinhos*/
+    text-decoration: none;
+    color: black; /*cor do texto do botão*/
+    font-size: 17px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    padding: 3px 5px;
+    border: 2px solid transparent; /*Definir uma borda tranparente*/
+    border-radius: 5px; /*A curvatura da borda*/
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /*Vai criar uma leve animação de aparecimento desses atributos*/
+}
+
+.menu ul li a:hover { /*Vai mudar os butões após passar o mouse por cima*/
+    background-color: var(--cor-terciaria);
+    color: white;
+    border-color: transparent; /*Cor tranparente da borda*/
+}
+
+.menu ul li.dropdown {
+    position: relative; /*O submenu será relativo a posição do header, ou seja, ele pode acompanhar onde o header estiver sem uma posição fixa*/
+}
+
+.menu ul li .submenu {
+    display: none; /*Esconde sub itens até que passe o mouse por cima*/
+    position: absolute; /*Vai se manter sempre debaixo do botão*/
+    top: 100%;
+    right: 0;
+    left: auto;
+    background-color: var(--cor-secundaria);
+    padding: 3px ;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 10px; /*Define um tamnho minimo*/
+    margin-right: 0;
+}
+
+.menu ul li:hover .submenu {
+    display: flex;
+}
+
+.menu ul li .submenu li a {
+    /*margin-left: 15px;*/
+    /*margin-top: 5px;*/
+    background-color: var(--cor-secundaria);
+    color: white;
+    width: 100%;
+    padding: 6px 5px;
+}
+
+.menu ul li .submenu li a:hover {
+    background-color: black;
+}
+
+main {
+    margin-top: 100px; /*Isto vai garantir que o main esteja 10 pixeis abaixo do header na posição inicial*/
+    height: 860px;
+    background-color: black;
+}
+
+.car_display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 120px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.car_img {
+    width: 100%;
+    height: 90px;
+    background-color: var(--cor-terciaria);
+}
+
+.car_box {
+    width: 35vh;
+    height: 30vh;
+    background-color: var(--cor-primaria);
+    text-align: center;
+    border: 3px solid var(--cor-primaria);
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.car_box h3 {
+    font-family: "Roboto Mono", monospace;
+}
+
+.car_box p {
+    font-family: "Roboto Mono", monospace;
+}
+
+.car_box:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    background-color: black;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+.car_box button {
+    background-color: var(--cor-primaria);
+    border: 3px solid transparent;
+    border-radius: 5px;
+    width: 139px;
+    height: 38px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.car_box button:hover {
+    transform: scale(1.1);
+    border: 3px solid #b6d7fd;
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+footer div {
+    text-align: center;
+    padding: 10px;
+}
+
+footer div i {
+    color: white;
+    padding: 10px;
+    font-size: 50px;
+}
+
+footer div p {
+    padding: 3px;
+}
