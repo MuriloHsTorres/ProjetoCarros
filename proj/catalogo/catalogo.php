@@ -98,15 +98,6 @@
                     }
                 }
             ?>
-            
-            <div class="car_box">
-                <img src="image.png" alt="imagem_carro" class="car_img">
-                <div class="content">
-                    <h3>Carro X</h3>
-                    <p>Marca X</p>
-                    <a href="#"><button>R&#36;111.111,10</button></a>
-                </div>
-            </div>
 
         </section>
     </main>
